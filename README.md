@@ -21,7 +21,7 @@ Tingkatkan penjualan toko online Anda secara **GRATIS**! Alat ini membantu Anda 
 ---
 
 ## 🚀 Cara Menggunakan:
-1. Akses halaman alat generator secara **gratis** melalui link GitHub Pages *repository* ini.
+1. Akses halaman alat generator secara **gratis** melalui link ini: **👉[Tools WhatsApp Order Form Generator](https://fansid77.github.io/whatsapp-order-form-generator/)**
 2. Masukkan nomor WhatsApp toko Anda dan judul formulir pesanan.
 3. Klik tombol **Generate**, lalu salin (*copy*) kode HTML instan yang dihasilkan.
 4. Tempelkan (*paste*) kode tersebut ke halaman website atau *landing page* produk Anda.
