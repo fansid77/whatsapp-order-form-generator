@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[GRATIS] Generator Form Order WhatsApp untuk Toko Online | profesor.web.id</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background: #f8fafc; color: #0f172a; padding: 2rem 1rem; margin: 0; }
+        .container { max-width: 650px; margin: 0 auto; background: white; padding: 2.5rem; border-radius: 12px; box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05); }
+        h1 { font-size: 1.6rem; color: #0284c7; margin-bottom: 0.5rem; }
+        p { color: #64748b; font-size: 0.95rem; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        label { display: block; font-weight: 600; margin-bottom: 0.5rem; font-size: 0.9rem; }
+        input { width: 100%; padding: 0.75rem; border: 1px solid #cbd5e1; border-radius: 6px; font-size: 0.95rem; box-sizing: border-box; }
+        button { background: #25d366; color: white; border: none; padding: 0.85rem 1.5rem; font-weight: 600; border-radius: 6px; cursor: pointer; width: 100%; margin-top: 1rem; font-size: 1rem; }
+        button:hover { background: #1ebe5d; }
+        .code-box { background: #0f172a; color: #38bdf8; padding: 1rem; border-radius: 6px; font-family: monospace; font-size: 0.85rem; margin-top: 1.5rem; white-space: pre-wrap; word-break: break-all; max-height: 200px; overflow-y: auto; }
+        .footer-note { text-align: center; margin-top: 2rem; font-size: 0.85rem; color: #64748b; }
+        .footer-note a { color: #0284c7; text-decoration: none; font-weight: 600; }
+        .badge { background: #e0f2fe; color: #0369a1; padding: 0.25rem 0.75rem; border-radius: 20px; font-size: 0.75rem; font-weight: 700; display: inline-block; margin-bottom: 1rem; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <span class="badge">100% GRATIS & OPEN SOURCE</span>
+    <h1>🛒 WhatsApp Order Form Generator</h1>
+    <p>Buat formulir pemesanan produk otomatis yang langsung terhubung ke WhatsApp Anda. Sangat cocok untuk toko online, reseller, dan UMKM.</p>
+    
+    <div class="form-group">
+        <label>Nomor WhatsApp Toko (Awali kode negara, misal: 628123...):</label>
+        <input type="text" id="shopPhone" placeholder="628xxxxxxxxxx" value="628123456789">
+    </div>
+    
+    <div class="form-group">
+        <label>Judul Formulir Pesanan:</label>
+        <input type="text" id="formTitle" placeholder="Form Order Produk Kami" value="Form Pemesanan Resmi">
+    </div>
+    
+    <button onclick="generateOrderForm()">Generate Kode Form (Gratis)</button>
+
+    <div id="resultSection" style="display:none;">
+        <label style="margin-top: 1.5rem;">Salin Kode HTML Formulir Ini:</label>
+        <div class="code-box" id="outputCode"></div>
+    </div>
+</div>
+
+<div class="footer-note">
+    Butuh sistem website toko online custom? Kunjungi <a href="https://profesor.web.id" target="_blank">profesor.web.id</a>
+</div>
+
+<script>
+function generateOrderForm() {
+    let phone = document.getElementById('shopPhone').value;
+    let title = document.getElementById('formTitle').value;
+    
+    let htmlCode = `<!-- WhatsApp Order Form by profesor.web.id -->\n<div style="background:#ffffff; padding:20px; border-radius:8px; border:1px solid #e2e8f0; max-width:400px; font-family:sans-serif;">\n  <h3 style="color:#0284c7; margin-top:0;">${title}</h3>\n  <form onsubmit="sendOrder(event)">\n    <div style="margin-bottom:10px;"><label style="font-size:13px; font-weight:bold;">Nama Lengkap:</label><br><input type="text" id="custName" required style="width:100%; padding:8px; box-sizing:border-box; margin-top:4px; border:1px solid #cbd5e1; border-radius:4px;"></div>\n    <div style="margin-bottom:10px;"><label style="font-size:13px; font-weight:bold;">Nama Produk / Pesanan:</label><br><input type="text" id="custProd" required style="width:100%; padding:8px; box-sizing:border-box; margin-top:4px; border:1px solid #cbd5e1; border-radius:4px;"></div>\n    <div style="margin-bottom:10px;"><label style="font-size:13px; font-weight:bold;">Jumlah (Qty):</label><br><input type="number" id="custQty" value="1" required style="width:100%; padding:8px; box-sizing:border-box; margin-top:4px; border:1px solid #cbd5e1; border-radius:4px;"></div>\n    <div style="margin-bottom:10px;"><label style="font-size:13px; font-weight:bold;">Alamat Pengiriman:</label><br><input type="text" id="custAddr" required style="width:100%; padding:8px; box-sizing:border-box; margin-top:4px; border:1px solid #cbd5e1; border-radius:4px;"></div>\n    <button type="submit" style="background:#25d366; color:white; border:none; padding:10px; width:100%; font-weight:bold; border-radius:4px; cursor:pointer;">Kirim Pesanan via WhatsApp</button>\n  </form>\n</div>\n<script>\nfunction sendOrder(e){\n  e.preventDefault();\n  let n = document.getElementById('custName').value;\n  let p = document.getElementById('custProd').value;\n  let q = document.getElementById('custQty').value;\n  let a = document.getElementById('custAddr').value;\n  let text = \`Halo Admin, saya ingin memesan:\\n\\n- Nama: \${n}\\n- Produk: \${p}\\n- Jumlah: \${q}\\n- Alamat: \${a}\\n\\nMohon segera diproses, terima kasih.\`;\n  window.open('https://wa.me/${phone}?text=' + encodeURIComponent(text), '_blank');\n}\n<\/script>`;
+    
+    document.getElementById('outputCode').innerText = htmlCode;
+    document.getElementById('resultSection').style.display = 'block';
+}
+</script>
+
+</body>
+</html>
